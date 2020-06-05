@@ -26,15 +26,16 @@ if __name__ == '__main__':
         items = [Item(size=int(i)) for i in items]
         log("  Iteration", end=" ")
         # Perform 30 independent iterations.
-        for iteration in range(1):
+        for iteration in range(4):
             log(iteration+1, end=" ")
             # Randomize the order of the items in the item list.
             shuffle(items)
             thing = HRH(capacity, items)
             start_time = datetime.now()
-            result2, total_iterationsAG, stagnationAG, total_iterationsTB, stagnationTB, combinationTB = thing.run()
+            result1, result2, total_iterationsAG, stagnationAG, total_iterationsTB, stagnationTB, combinationTB = thing.run()
             execution_time = datetime.now() - start_time
             # Record the relevant data for analysis
+            print(result1.best_solution.num_bins,len(result2.bins))
             summary = {
                 "execution_time": str(execution_time),
                 "num_bins": len(result2.bins),

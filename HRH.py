@@ -18,5 +18,5 @@ class HRH:
         result2 = TabuSearch(self.bin_capacity, self.items)
         total_iterationsTB, stagnationTB, combinationTB = result2.run2(result1)
 
-        return result2,total_iterationsAG, stagnationAG, total_iterationsTB, stagnationTB, combinationTB
+        return result1,result2,total_iterationsAG, stagnationAG, total_iterationsTB, stagnationTB, combinationTB
 

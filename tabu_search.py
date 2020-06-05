@@ -64,7 +64,7 @@ class TabuSearch:
         :return: (num_iterations, num_no_changes, chosen_combination)
         """
         combination = AGsol.best_solution.pattern
-        self.bins =[Bin(AGsol.best_solution.num_bins)] 
+        self.bins =self.generate_solution(combination) 
         self.fitness = AGsol.best_solution.fitness
         self.tabu_list.add(combination)
         current_iteration = 0
