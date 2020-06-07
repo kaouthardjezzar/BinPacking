@@ -6,7 +6,7 @@ import random
 
 class TabuSearch:
     MAX_COMBINATION_LENGTH = 15
-    MAX_ITERATIONS = 5000
+    MAX_ITERATIONS = 10
     MAX_NO_CHANGE = 2000
     heuristic_map = {
         "f": FirstFit,
@@ -66,6 +66,35 @@ class TabuSearch:
         combination = AGsol.best_solution.pattern
         self.bins =self.generate_solution(combination) 
         self.fitness = AGsol.best_solution.fitness
+        self.tabu_list.add(combination)
+        current_iteration = 0
+        num_no_change = 0
+        while num_no_change < self.MAX_NO_CHANGE and current_iteration < self.MAX_ITERATIONS:
+            new_combination = self.apply_move_operator(combination)
+            while len(new_combination) > self.MAX_COMBINATION_LENGTH :
+                new_combination = self.apply_move_operator(new_combination)
+            if new_combination not in self.tabu_list:
+                self.tabu_list.add(new_combination)
+                solution = self.generate_solution(new_combination)
+                fitness = sum(b.fitness() for b in solution) / len(solution)
+                if fitness > self.fitness:
+                    self.bins = solution
+                    self.fitness = fitness
+                    num_no_change = 0
+                    combination = new_combination
+                current_iteration += 1
+            else : 
+                current_iteration += 1
+                num_no_change += 1
+        return current_iteration, num_no_change, combination
+    def run3(self,chromosome):
+        """
+        Runs the tabu search algorithm and returns the results at the end of the process.
+        :return: (num_iterations, num_no_changes, chosen_combination)
+        """
+        combination = chromosome.pattern
+        self.bins =self.generate_solution(combination) 
+        self.fitness = chromosome.fitness
         self.tabu_list.add(combination)
         current_iteration = 0
         num_no_change = 0
