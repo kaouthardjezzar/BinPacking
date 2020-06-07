@@ -15,6 +15,28 @@ class SA(object):
         self.iter_nb = iter_nb
 
 
+    def run_for_lth(self,bins):
+        self.bins = bins
+        # Initialize temperature
+        t = self.t_init
+        # Average to temprature to separate 
+        t_average = (self.t_init + self.t_target) / 2
+        # iterate
+        while t > self.t_target:
+            for i in range(self.iter_nb):
+                if t > t_average:
+                    neighbour = self._get_neighbour_01()
+                else:
+                    neighbour = self._get_neighbour_11()
+                delta = self._objective_function(neighbour) - self._objective_function(self.bins)
+                if delta > 0:
+                    self.bins = copy.deepcopy(neighbour)
+                else:
+                    u = np.random.random()
+                    if (u < np.exp(delta/t)):
+                        self.bins = copy.deepcopy(neighbour)
+            t = self.alpha * t
+
 
     def run(self):
         # Initial solution generated with first fit method
