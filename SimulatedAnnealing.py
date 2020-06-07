@@ -16,7 +16,7 @@ class SA(object):
 
 
     def run_for_lth(self,bins):
-        self.bins = bins
+        self.bins = copy.deepcopy(bins)
         # Initialize temperature
         t = self.t_init
         # Average to temprature to separate 
