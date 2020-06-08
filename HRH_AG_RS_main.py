@@ -45,5 +45,5 @@ if __name__ == '__main__':
             dataset["results"].setdefault("HRH_RS", []).append(summary)
             #dataset["results"].setdefault("SA", []).append(summary)
     # Write the captured data to disk.
-    with open("./results/HRH_RS.json", "w") as file:
+    with open("./HRH_RS.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))

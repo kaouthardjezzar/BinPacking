@@ -17,7 +17,7 @@ class HRH_RS:
         total_iterationsAG, stagnationAG = result1.run()
 
         sa = SA(0.9,self.bin_capacity, self.items,100,10,10)
-        sa.run_for_hrh(result1.best_solution.generate_solution)
+        sa.run_for_hrh(result1.best_solution.generate_solution(self.items))
 
         return sa
 
