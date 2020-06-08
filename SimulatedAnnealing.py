@@ -15,7 +15,7 @@ class SA(object):
         self.iter_nb = iter_nb
 
 
-    def run_for_lth(self,bins):
+    def run_for_hrh(self,bins):
         self.bins = copy.deepcopy(bins)
         # Initialize temperature
         t = self.t_init
