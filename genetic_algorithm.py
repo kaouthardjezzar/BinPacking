@@ -11,7 +11,7 @@ class GeneticAlgorithm:
     MUTATION_RATE = 0.3
     CROSSOVER_RATE = 0.6
 
-    def __init__(self, capacity, items):
+    def __init__(self, capacity, items,population_size=50,population=None):
         """
         Creates an instance that can run the genetic algorithm.
         :param capacity: The capacity of a bin.
@@ -19,8 +19,14 @@ class GeneticAlgorithm:
         """
         self.items = items
         self.best_solution = None
-        self.population = [Chromosome(capacity) for _ in range(self.POPULATION_SIZE)]
-        self.update_individuals(self.population)
+        self.POPULATION_SIZE = population_size
+        if population == None:
+            self.population = [Chromosome(capacity) for _ in range(self.POPULATION_SIZE)]
+            self.update_individuals(self.population)
+        else:
+            self.population = population
+            self.update_individuals(self.population)
+        
 
     def run(self):
         """
