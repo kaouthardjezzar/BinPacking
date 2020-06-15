@@ -1,0 +1,25 @@
+[
+  {
+    "name": "N1C1W4_E.txt",
+    "results": {
+      "HTH": [
+        {
+          "execution_time": "0:00:24.005689",
+          "num_bins": [
+            39,
+            39,
+            39
+          ]
+        },
+        {
+          "execution_time": "0:00:45.408537",
+          "num_bins": [
+            39,
+            39,
+            39
+          ]
+        }
+      ]
+    }
+  }
+]
