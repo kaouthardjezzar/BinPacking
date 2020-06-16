@@ -1,32 +1,27 @@
+# coding=utf-8
 from bin import Bin
 from heuristics import BestFit, FirstFit, NextFit, WorstFit
 import random
 
 
 class GeneticAlgorithm:
-    POPULATION_SIZE = 50
-    MAX_GENERATIONS = 250
-    MAX_NO_CHANGE = 50
-    TOURNAMENT_SIZE = 20
-    MUTATION_RATE = 0.3
-    CROSSOVER_RATE = 0.6
 
-    def __init__(self, capacity, items,population_size=50,population=None):
+    def __init__(self, capacity, items,POPULATION_SIZE = 50,MAX_GENERATIONS = 250,MAX_NO_CHANGE = 50 ,TOURNAMENT_SIZE = 20 ,MUTATION_RATE = 0.3 ,CROSSOVER_RATE = 0.6):
         """
-        Creates an instance that can run the genetic algorithm.
-        :param capacity: The capacity of a bin.
-        :param items: The items that have to be packed in bins.
+        Cree une instance qui peut executer l'algorithme genetique.
+        :param capacity: la capacité du bin.
+        :param items: l'ensemble des items qui doivent être emballés dans le bin.
         """
+        self.POPULATION_SIZE = POPULATION_SIZE
+        self.MAX_GENERATIONS = MAX_GENERATIONS
+        self.MAX_NO_CHANGE = MAX_NO_CHANGE
+        self.TOURNAMENT_SIZE = TOURNAMENT_SIZE
+        self.MUTATION_RATE = MUTATION_RATE
+        self.CROSSOVER_RATE = CROSSOVER_RATE
         self.items = items
         self.best_solution = None
-        self.POPULATION_SIZE = population_size
-        if population == None:
-            self.population = [Chromosome(capacity) for _ in range(self.POPULATION_SIZE)]
-            self.update_individuals(self.population)
-        else:
-            self.population = population
-            self.update_individuals(self.population)
-        
+        self.population = [Chromosome(capacity) for _ in range(self.POPULATION_SIZE)]
+        self.update_individuals(self.population)
 
     def run(self):
         """
