@@ -28,6 +28,7 @@ if __name__ == '__main__':
         {"name": "N2W1B3R8.txt", "solution":34, "results": {}}, 
         {"name": "N3W3B3R1.txt", "solution":27, "results": {}}, 
         {"name": "N4W4B3R9.txt", "solution":56, "results": {}}, 
+
         
       
     ]
@@ -59,5 +60,5 @@ if __name__ == '__main__':
             dataset["results"].setdefault("SA", []).append(summary)
             #dataset["results"].setdefault("SA", []).append(summary)
     # Write the captured data to disk.
-    with open("./results/results_sa.json", "w") as file:
+    with open("./results_sa.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))

@@ -12,7 +12,14 @@ def log(message, end=None):
 
 if __name__ == '__main__':
     datasets = [
-        {"name": "N1C1W4_E.txt", "results": {}},
+         {"name": "N1C1W4_E.txt", "results": {}},
+        {"name": "N1C2W2_H.txt", "results": {}},
+        {"name": "N1C3W1_C.txt", "results": {}},
+       
+       
+        {"name": "N4W4B3R9.txt", "results": {}},
+        
+        {"name": "HARD9.txt", "results": {}},
       
     ]
 

@@ -5,23 +5,24 @@ import random
 
 
 class TabuSearch:
-    MAX_COMBINATION_LENGTH = 15
-    MAX_ITERATIONS = 10
-    MAX_NO_CHANGE = 2000
+
     heuristic_map = {
         "f": FirstFit,
         "n": NextFit,
         "w": WorstFit,
         "b": BestFit,
     }
-    movers = [Add, Change, Remove, Swap]
+    movers = [Add, Change, Remove, Swap] 
 
-    def __init__(self, capacity, items):
+    def __init__(self, capacity, items, MAX_COMBINATION_LENGTH=10, MAX_ITERATIONS=5000, MAX_NO_CHANGE = 1000):
         """
         Creates an instance that can run the tabu search algorithm.
         :param capacity: The capacity of a bin.
         :param items: The items that have to be packed in bins.
         """
+        self.MAX_COMBINATION_LENGTH = MAX_COMBINATION_LENGTH
+        self.MAX_ITERATIONS = MAX_ITERATIONS
+        self.MAX_NO_CHANGE = MAX_NO_CHANGE
         self.bin_capacity = capacity
         self.items = items
         self.fitness = 0
@@ -53,10 +54,8 @@ class TabuSearch:
                     self.fitness = fitness
                     num_no_change = 0
                     combination = new_combination
-                current_iteration += 1
-            else : 
-                current_iteration += 1
-                num_no_change += 1
+            current_iteration += 1
+            num_no_change += 1
         return current_iteration, num_no_change, combination
     def run2(self,AGsol):
         """
