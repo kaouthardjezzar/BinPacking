@@ -53,6 +53,9 @@ if __name__=='__main__':
     TOURNAMENT_SIZE = None
     MUTATION_RATE = None
     CROSSOVER_RATE = None
+    MAX_COMBINATION_LENGTH = None
+    MAX_ITERATIONS = None
+    MAX_NO_CHANGE2 = None
     # Parse parameters
 
     with open(instance, 'r') as file:
@@ -77,17 +80,22 @@ if __name__=='__main__':
         if param == "--MUTATION_RATE":
             MUTATION_RATE = float(value)
         if param == "--CROSSOVER_RATE":
-            CROSSOVER_RATE = float(value)                        
+            CROSSOVER_RATE = float(value)
+        if param == "--MAX_COMBINATION_LENGTH":
+            MAX_COMBINATION_LENGTH = int(value)
+        if param == "--MAX_ITERATIONS":
+            MAX_ITERATIONS = int(value)
+        if param == "--MAX_NO_CHANGE2":
+            MAX_NO_CHANGE2 = int(value)                        
     
 
 
     shuffle(items)
-    thing = GeneticAlgorithm(capacity, items,POPULATION_SIZE,MAX_GENERATIONS ,MAX_NO_CHANGE ,TOURNAMENT_SIZE ,MUTATION_RATE ,CROSSOVER_RATE)
-
+    thing = HRH(capacity, items, POPULATION_SIZE ,MAX_GENERATIONS,MAX_NO_CHANGE ,TOURNAMENT_SIZE ,MUTATION_RATE,CROSSOVER_RATE , MAX_COMBINATION_LENGTH, MAX_ITERATIONS, MAX_NO_CHANGE2)
     start_time = datetime.now()
-    total_iterations, stagnation = thing.run()
+    result1, result2, total_iterationsAG, stagnationAG, total_iterationsTB, stagnationTB, combinationTB = thing.run()
     execution_time = datetime.now() - start_time
 
-    print(str( thing.best_solution.num_bins) + "\n")# retourner le cost vers Irace
+    print(str(len(result2.bins)) + "\n")# retourner le cost vers Irace
    
     sys.exit(0)

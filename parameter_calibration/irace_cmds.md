@@ -10,6 +10,7 @@ commands on rsudio :<br>
 
 library("irace")<br>
 setwd("C:/Users/kaout/OneDrive/Bureau/BinPacking/parameter_calibration/RT")<br>
+setwd("C:/Users/T480S/Documents/ESI/2CS-SIQ3/S2/OPTIM/BinPacking/parameter_calibration/HRH")<br>
 scenario <- readScenario(filename = "scenario.txt",scenario = defaultScenario())<br>
 checkIraceScenario(scenario = scenario)<br>
 irace.main(scenario = scenario)<br>

@@ -11,5 +11,5 @@
 ## parameter conditions (NA should be used for those parameters that
 ## are not enabled for a given configuration) and, if given, the
 ## constraints that describe forbidden configurations.
-POPULATION_SIZE MAX_GENERATIONS MAX_NO_CHANGE TOURNAMENT_SIZE MUTATION_RATE CROSSOVER_RATE
-50              250             50            20              0.3           0.6
+POPULATION_SIZE MAX_GENERATIONS MAX_NO_CHANGE TOURNAMENT_SIZE MUTATION_RATE CROSSOVER_RATE MAX_COMBINATION_LENGTH MAX_ITERATIONS MAX_NO_CHANGE2 
+50              250             50            20              0.3           0.6            10                     5000           1000 
