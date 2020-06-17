@@ -19,6 +19,18 @@ if __name__ == '__main__':
         {"name": "N2C2W1_F.txt", "results": {}},
         {"name": "N2C3W1_Q.txt", "results": {}},
         {"name": "N3C1W1_K.txt", "results": {}},
+        {"name": "N3C2W2_M.txt", "results": {}},
+        {"name": "N3C3W4_O.txt", "results": {}},
+        {"name": "N4C1W1_N.txt", "results": {}},
+        {"name": "N4C2W2_L.txt", "results": {}},
+        {"name": "N4C3W1_F.txt", "results": {}},
+        {"name": "N1W4B2R3.txt", "results": {}},
+        {"name": "N2W1B3R8.txt", "results": {}},
+        {"name": "N3W3B3R1.txt", "results": {}},
+        {"name": "N4W4B3R9.txt", "results": {}},
+        {"name": "HARD0.txt", "results": {}},
+        {"name": "HARD7.txt", "results": {}},
+        {"name": "HARD9.txt", "results": {}},
         
       
     ]
@@ -50,5 +62,5 @@ if __name__ == '__main__':
             dataset["results"].setdefault("SA", []).append(summary)
             #dataset["results"].setdefault("SA", []).append(summary)
     # Write the captured data to disk.
-    with open("./results/results_sa.json", "w") as file:
+    with open("./results_sa.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))
