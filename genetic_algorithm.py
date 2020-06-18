@@ -6,7 +6,7 @@ import random
 
 class GeneticAlgorithm:
 
-    def __init__(self, capacity, items,POPULATION_SIZE = 50,MAX_GENERATIONS = 250,MAX_NO_CHANGE = 50 ,TOURNAMENT_SIZE = 20 ,MUTATION_RATE = 0.3 ,CROSSOVER_RATE = 0.6):
+    def __init__(self, capacity, items,POPULATION_SIZE = 50,MAX_GENERATIONS = 250,MAX_NO_CHANGE = 50 ,TOURNAMENT_SIZE = 20 ,MUTATION_RATE = 0.3 ,CROSSOVER_RATE = 0.6, population=None):
         """
         Cree une instance qui peut executer l'algorithme genetique.
         :param capacity: la capacité du bin.
@@ -20,8 +20,12 @@ class GeneticAlgorithm:
         self.CROSSOVER_RATE = CROSSOVER_RATE
         self.items = items
         self.best_solution = None
-        self.population = [Chromosome(capacity) for _ in range(self.POPULATION_SIZE)]
-        self.update_individuals(self.population)
+        if population == None:
+            self.population = [Chromosome(capacity) for _ in range(self.POPULATION_SIZE)]
+            self.update_individuals(self.population)
+        else:
+            self.population = population
+            self.update_individuals(self.population)
 
     def run(self):
         """
