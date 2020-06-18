@@ -12,7 +12,7 @@ class LTH:
     MUTATION_RATE = 0.3
     CROSSOVER_RATE = 0.6
 
-    def __init__(self, capacity, items):
+    def __init__(self, capacity, items,POPULATION_SIZE = 50, MAX_GENERATIONS = 150, MAX_NO_CHANGE = 20, TOURNAMENT_SIZE = 20, MUTATION_RATE = 0.3,CROSSOVER_RATE = 0.6):
         """
         Creates an instance that can run the genetic algorithm.
         :param capacity: The capacity of a bin.
@@ -22,6 +22,13 @@ class LTH:
         self.best_solution = None
         self.population = [Chromosome(capacity) for _ in range(self.POPULATION_SIZE)]
         self.update_individuals(self.population)
+
+        self.POPULATION_SIZE = POPULATION_SIZE
+        self.MAX_GENERATIONS = MAX_GENERATIONS
+        self.MAX_NO_CHANGE = MAX_NO_CHANGE
+        self.TOURNAMENT_SIZE = TOURNAMENT_SIZE
+        self.MUTATION_RATE = MUTATION_RATE
+        self.CROSSOVER_RATE = CROSSOVER_RATE
 
     def run(self):
         """
