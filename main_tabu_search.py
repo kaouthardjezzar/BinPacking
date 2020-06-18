@@ -66,5 +66,5 @@ if __name__ == '__main__':
             }
             dataset["results"].setdefault("TabuSearch", []).append(summary)
     # Write the captured data to disk.
-    with open("results_tabu_search.json", "w") as file:
+    with open("./resultats/results_tabu_search.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))

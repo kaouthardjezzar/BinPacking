@@ -23,10 +23,11 @@ import os.path
 import re
 import subprocess
 import sys
+import numpy as np
 
-sys.path.insert(1, 'C:\\Users\\T480S\\Documents\\ESI\\2CS-SIQ3\\S2\\OPTIM\\BinPacking')
+sys.path.insert(1, 'C:\\Users\\kaout\\OneDrive\\Bureau\\BinPacking')
 
-from HRH import HRH
+from HRH_AG_RS import HRH_RS
 from item import Item
 from random import shuffle
 from datetime import datetime
@@ -54,9 +55,11 @@ if __name__=='__main__':
     TOURNAMENT_SIZE = None
     MUTATION_RATE = None
     CROSSOVER_RATE = None
-    MAX_COMBINATION_LENGTH = None
-    MAX_ITERATIONS = None
-    MAX_NO_CHANGE2 = None
+    
+    ALPHA = None 
+    T0 = None
+    T_TARGET = None
+    NB_ITER = None
     # Parse parameters
 
     with open(instance, 'r') as file:
@@ -82,21 +85,23 @@ if __name__=='__main__':
             MUTATION_RATE = float(value)
         if param == "--CROSSOVER_RATE":
             CROSSOVER_RATE = float(value)
-        if param == "--MAX_COMBINATION_LENGTH":
-            MAX_COMBINATION_LENGTH = int(value)
-        if param == "--MAX_ITERATIONS":
-            MAX_ITERATIONS = int(value)
-        if param == "--MAX_NO_CHANGE2":
-            MAX_NO_CHANGE2 = int(value)                        
+        if param == "--ALPHA":
+            ALPHA = float(value)
+        if param == "--T0":
+            T0 = int(value)
+        if param == "--T_TARGET":
+            T_TARGET = int(value)
+        if param == "--NB_ITER":
+            NB_ITER = int(value)                       
     
 
 
     shuffle(items)
-    thing = HRH(capacity, items, POPULATION_SIZE ,MAX_GENERATIONS,MAX_NO_CHANGE ,TOURNAMENT_SIZE ,MUTATION_RATE,CROSSOVER_RATE , MAX_COMBINATION_LENGTH, MAX_ITERATIONS, MAX_NO_CHANGE2)
+    thing = HRH_RS(capacity, items, POPULATION_SIZE ,MAX_GENERATIONS,MAX_NO_CHANGE ,TOURNAMENT_SIZE ,MUTATION_RATE,CROSSOVER_RATE , ALPHA, T0, T_TARGET, NB_ITER)
     start_time = datetime.now()
-    result1, result2, total_iterationsAG, stagnationAG, total_iterationsTB, stagnationTB, combinationTB = thing.run()
+    sa = thing.run()
     execution_time = datetime.now() - start_time
 
-    print(str(len(result2.bins)) + "\n")# retourner le cost vers Irace
+    print(str(len(sa.bins)) + "\n")# retourner le cost vers Irace
    
     sys.exit(0)
