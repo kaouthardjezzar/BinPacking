@@ -28,7 +28,7 @@ class HTH:
         N = len(population)
         ITEM_PER_ISLAND=int(math.ceil(N/self.NUMBER_OF_ISLANDS))
         func = lambda i: int((i + 1) * ITEM_PER_ISLAND) if (i + 1) * ITEM_PER_ISLAND < N else N
-        islands = [GeneticAlgorithm(self.bin_capacity, self.items,population_size=ITEM_PER_ISLAND,population=population[i*ITEM_PER_ISLAND: func(i)]) for i in range(self.NUMBER_OF_ISLANDS)]
+        islands = [GeneticAlgorithm(self.bin_capacity, self.items,POPULATION_SIZE=ITEM_PER_ISLAND,population=population[i*ITEM_PER_ISLAND: func(i)]) for i in range(self.NUMBER_OF_ISLANDS)]
 
         #log some information
         print("\nnumber of islands ", len(islands))
