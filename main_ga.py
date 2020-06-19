@@ -46,5 +46,5 @@ if __name__ == '__main__':
             }
             dataset["results"].setdefault("GA", []).append(summary)
     # Write the captured data to disk.
-    with open("results_ga.json", "w") as file:
+    with open("./resultats/results_ga.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))

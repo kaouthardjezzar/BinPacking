@@ -1,0 +1,15 @@
+## Template for specifying initial parameter configurations, for
+## example, the default configuration, in irace.
+##
+## This filename must be specified via the --candidates-file command-line option
+## (or candidatesFile in scenario.txt).
+##
+## The format is one parameter configuration per line, and one parameter per
+## column. The first line gives the parameter name corresponding to
+## each column (names must match those given in the parameters
+## file). Each configuration must satisfy the
+## parameter conditions (NA should be used for those parameters that
+## are not enabled for a given configuration) and, if given, the
+## constraints that describe forbidden configurations.
+POPULATION_SIZE MAX_GENERATIONS MAX_NO_CHANGE TOURNAMENT_SIZE MUTATION_RATE CROSSOVER_RATE ALPHA T0 T_TARGET NB_ITER 
+50              250             50            20              0.3           0.6            0.5   500 5       10  

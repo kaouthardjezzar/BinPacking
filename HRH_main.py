@@ -12,6 +12,8 @@ def log(message, end=None):
 if __name__ == '__main__':
     datasets = [
        {"name": "N1C1W4_E.txt", "results": {}},
+        {"name": "N1C2W2_H.txt", "results": {}},
+       
     ]
 
     # Loop through each data set.
@@ -40,5 +42,5 @@ if __name__ == '__main__':
             }
             dataset["results"].setdefault("HRH", []).append(summary)
     # Write the captured data to disk.
-    with open("results_HRH_search.json", "w") as file:
+    with open("./resultats/results_HRH_AG-RT.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))

@@ -80,5 +80,5 @@ if __name__ == '__main__':
                 }
                 dataset["results"].setdefault(h.__name__, []).append(summary)
     # Write the captured data to disk.
-    with open("results_low_level.json", "w") as file:
+    with open("./resultats/results_low_level.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))
