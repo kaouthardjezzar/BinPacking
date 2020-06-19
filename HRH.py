@@ -3,7 +3,7 @@ from tabu_search import TabuSearch
 
 
 class HRH:
-    def __init__(self, capacity, items,POPULATION_SIZE = 50,MAX_GENERATIONS = 250,MAX_NO_CHANGE = 50 ,TOURNAMENT_SIZE = 20 ,MUTATION_RATE = 0.3 ,CROSSOVER_RATE = 0.6,MAX_COMBINATION_LENGTH=10, MAX_ITERATIONS=5000, MAX_NO_CHANGE2 = 1000):
+    def __init__(self, capacity, items,POPULATION_SIZE = 64,MAX_GENERATIONS = 64,MAX_NO_CHANGE = 40 ,TOURNAMENT_SIZE = 31 ,MUTATION_RATE = 0.86 ,CROSSOVER_RATE = 0.47,MAX_COMBINATION_LENGTH=39, MAX_ITERATIONS=137, MAX_NO_CHANGE2 = 83):
         """
         Creates an instance that can run the tabu search algorithm .
         :param capacity: The capacity of a bin.
