@@ -13,23 +13,7 @@ if __name__ == '__main__':
     datasets = [
        {"name": "N1C1W4_E.txt", "results": {}},
         {"name": "N1C2W2_H.txt", "results": {}},
-        {"name": "N1C3W1_C.txt", "results": {}},
-        {"name": "N2C1W1_G.txt", "results": {}},
-        {"name": "N2C2W1_F.txt", "results": {}},
-        {"name": "N2C3W1_Q.txt", "results": {}},
-        {"name": "N3C1W1_K.txt", "results": {}},
-        {"name": "N3C2W2_M.txt", "results": {}},
-        {"name": "N3C3W4_O.txt", "results": {}},
-        {"name": "N4C1W1_N.txt", "results": {}},
-        {"name": "N4C2W2_L.txt", "results": {}},
-        {"name": "N4C3W1_F.txt", "results": {}},
-        {"name": "N1W4B2R3.txt", "results": {}},
-        {"name": "N2W1B3R8.txt", "results": {}},
-        {"name": "N3W3B3R1.txt", "results": {}},
-        {"name": "N4W4B3R9.txt", "results": {}},
-        {"name": "HARD0.txt", "results": {}},
-        {"name": "HARD7.txt", "results": {}},
-        {"name": "HARD9.txt", "results": {}},
+       
     ]
 
     # Loop through each data set.
@@ -58,5 +42,5 @@ if __name__ == '__main__':
             }
             dataset["results"].setdefault("HRH", []).append(summary)
     # Write the captured data to disk.
-    with open("results_HRH_search.json", "w") as file:
+    with open("./resultats/results_HRH_AG-RT.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))

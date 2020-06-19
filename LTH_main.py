@@ -49,5 +49,5 @@ if __name__ == '__main__':
             }
             dataset["results"].setdefault("LTH", []).append(summary)
     # Write the captured data to disk.
-    with open("results_LTH.json", "w") as file:
+    with open("./resultats/results_LTH.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))
