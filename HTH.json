@@ -4,15 +4,15 @@
     "results": {
       "HTH": [
         {
-          "execution_time": "0:00:24.005689",
+          "execution_time": "0:00:28.613364",
           "num_bins": [
             39,
-            39,
-            39
+            38,
+            38
           ]
         },
         {
-          "execution_time": "0:00:45.408537",
+          "execution_time": "0:00:21.447330",
           "num_bins": [
             39,
             39,

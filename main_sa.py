@@ -30,7 +30,6 @@ if __name__ == '__main__':
         {"name": "N4W4B3R9.txt", "solution":56, "results": {}}, 
 
         
-      
     ]
 
     # Loop through each data set.

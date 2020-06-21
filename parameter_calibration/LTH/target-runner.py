@@ -78,6 +78,13 @@ if __name__=='__main__':
             MAX_NO_CHANGE = int(value)
         if param == "--TOURNAMENT_SIZE":
             TOURNAMENT_SIZE = int(value)
+<<<<<<< HEAD
+        if param == "--MUTATION_RATE":
+            MUTATION_RATE = float(value)
+        if param == "--CROSSOVER_RATE":
+            CROSSOVER_RATE = float(value)
+                               
+=======
         if param == "--RL_RATE":
             RL_RATE = float(value)
         if param == "--CROSSOVER_RATE":
@@ -88,13 +95,20 @@ if __name__=='__main__':
             MAX_ITERATIONS = int(value)
         if param == "--MAX_NO_CHANGE2":
             MAX_NO_CHANGE2 = int(value)                        
+>>>>>>> f6b1e96b618cf045f2892dee4d9413c5b8664fbd
     
 
 
     shuffle(items)
+<<<<<<< HEAD
+    thing = LTH(capacity, items, POPULATION_SIZE ,MAX_GENERATIONS,MAX_NO_CHANGE ,TOURNAMENT_SIZE ,MUTATION_RATE,CROSSOVER_RATE )
+    start_time = datetime.now()
+    current_iteration, num_no_change = thing.run()
+=======
     thing = LTH(capacity, items, POPULATION_SIZE ,MAX_GENERATIONS,MAX_NO_CHANGE ,TOURNAMENT_SIZE,CROSSOVER_RATE,RL_RATE , MAX_COMBINATION_LENGTH, MAX_ITERATIONS, MAX_NO_CHANGE2)
     start_time = datetime.now()
     total_iterations, stagnation = thing.run()
+>>>>>>> f6b1e96b618cf045f2892dee4d9413c5b8664fbd
     execution_time = datetime.now() - start_time
 
     print(str(thing.best_solution.num_bins) + "\n")# retourner le cost vers Irace

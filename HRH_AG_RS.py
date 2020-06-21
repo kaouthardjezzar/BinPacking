@@ -2,7 +2,7 @@ from genetic_algorithm import GeneticAlgorithm
 from SimulatedAnnealing import SA
 
 class HRH_RS:
-    def __init__(self , capacity, items,POPULATION_SIZE = 50,MAX_GENERATIONS = 250,MAX_NO_CHANGE = 50 ,TOURNAMENT_SIZE = 20 ,MUTATION_RATE = 0.3 ,CROSSOVER_RATE = 0.6, alpha = 0.5,t_init = 500 ,t_target = 5,iter_nb = 10):
+    def __init__(self , capacity, items,POPULATION_SIZE = 64,MAX_GENERATIONS = 64,MAX_NO_CHANGE = 40 ,TOURNAMENT_SIZE = 31 ,MUTATION_RATE = 0.86 ,CROSSOVER_RATE = 0.47, alpha = 0.5,t_init = 500 ,t_target = 5,iter_nb = 10):
         """
         Creates an instance that can run the tabu search algorithm .
         :param capacity: The capacity of a bin.

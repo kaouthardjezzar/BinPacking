@@ -11,8 +11,28 @@ def log(message, end=None):
 
 if __name__ == '__main__':
     datasets = [
-       {"name": "N1C1W4_E.txt", "results": {}},
-        {"name": "N1C2W2_H.txt", "results": {}},
+<<<<<<< HEAD
+       {"name": "HARD9.txt", "solution":56, "results": {}},
+=======
+        {"name": "HARD9.txt", "solution":56, "results": {}},
+>>>>>>> f6b1e96b618cf045f2892dee4d9413c5b8664fbd
+        {"name": "HARD0.txt", "solution":56, "results": {}},
+        {"name": "HARD6.txt", "solution":57, "results": {}},
+        {"name": "HARD7.txt", "solution":55, "results": {}},
+
+        {"name": "N1C1W4_E.txt", "solution":35, "results": {}},
+        {"name": "N1C2W2_H.txt", "solution":23, "results": {}},
+        {"name": "N1C3W1_C.txt", "solution":17, "results": {}},
+        {"name": "N2C1W1_G.txt", "solution":60, "results": {}},
+        {"name": "N2C2W1_F.txt", "solution":49, "results": {}},
+        {"name": "N2C3W1_Q.txt", "solution":34, "results": {}},
+        {"name": "N3C1W1_K.txt", "solution":102, "results": {}},
+
+        {"name": "N1W4B2R3.txt", "solution":6, "results": {}},
+        {"name": "N2W1B3R8.txt", "solution":34, "results": {}}, 
+        {"name": "N3W3B3R1.txt", "solution":27, "results": {}}, 
+        {"name": "N4W4B3R9.txt", "solution":56, "results": {}}, 
+        
        
     ]
 
@@ -42,5 +62,5 @@ if __name__ == '__main__':
             }
             dataset["results"].setdefault("HRH", []).append(summary)
     # Write the captured data to disk.
-    with open("./resultats/results_HRH_AG-RT.json", "w") as file:
+    with open("./results/results_HRH_AG-RT.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))

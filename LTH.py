@@ -29,6 +29,13 @@ class LTH:
         self.population = [Chromosome(capacity) for _ in range(self.POPULATION_SIZE)]
         self.update_individuals(self.population)
 
+        self.POPULATION_SIZE = POPULATION_SIZE
+        self.MAX_GENERATIONS = MAX_GENERATIONS
+        self.MAX_NO_CHANGE = MAX_NO_CHANGE
+        self.TOURNAMENT_SIZE = TOURNAMENT_SIZE
+        self.MUTATION_RATE = MUTATION_RATE
+        self.CROSSOVER_RATE = CROSSOVER_RATE
+
     def run(self):
         """
         Runs the genetic algorithm and returns the results at the end of the process.
