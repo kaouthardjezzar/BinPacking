@@ -24,7 +24,7 @@ import re
 import subprocess
 import sys
 
-sys.path.insert(1, 'C:\\Users\\T480S\\Documents\\ESI\\2CS-SIQ3\\S2\\OPTIM\\BinPacking')
+sys.path.insert(1, 'C:\\Users\\kaout\\OneDrive\\Bureau\\BinPacking')
 
 from LTH2 import LTH2
 from item import Item

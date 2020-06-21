@@ -26,7 +26,7 @@ if __name__ == '__main__':
         items = [Item(size=int(i)) for i in items]
         log("  Iteration", end=" ")
         # Perform 30 independent iterations.
-        for iteration in range(2):
+        for iteration in range(1):
             log(iteration+1, end=" ")
             # Randomize the order of the items in the item list.
             shuffle(items)
