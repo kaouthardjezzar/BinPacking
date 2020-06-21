@@ -52,7 +52,7 @@ if __name__=='__main__':
     MAX_GENERATIONS = None
     MAX_NO_CHANGE = None
     TOURNAMENT_SIZE = None
-    MUTATION_RATE = None
+    RL_RATE = None
     CROSSOVER_RATE = None
     MAX_COMBINATION_LENGTH = None
     MAX_ITERATIONS = None
@@ -78,8 +78,8 @@ if __name__=='__main__':
             MAX_NO_CHANGE = int(value)
         if param == "--TOURNAMENT_SIZE":
             TOURNAMENT_SIZE = int(value)
-        if param == "--MUTATION_RATE":
-            MUTATION_RATE = float(value)
+        if param == "--RL_RATE":
+            RL_RATE = float(value)
         if param == "--CROSSOVER_RATE":
             CROSSOVER_RATE = float(value)
         if param == "--MAX_COMBINATION_LENGTH":
@@ -92,7 +92,7 @@ if __name__=='__main__':
 
 
     shuffle(items)
-    thing = LTH2(capacity, items, POPULATION_SIZE ,MAX_GENERATIONS,MAX_NO_CHANGE ,TOURNAMENT_SIZE ,MUTATION_RATE,CROSSOVER_RATE , MAX_COMBINATION_LENGTH, MAX_ITERATIONS, MAX_NO_CHANGE2)
+    thing = LTH2(capacity, items, POPULATION_SIZE ,MAX_GENERATIONS,MAX_NO_CHANGE ,TOURNAMENT_SIZE ,CROSSOVER_RATE,RL_RATE , MAX_COMBINATION_LENGTH, MAX_ITERATIONS, MAX_NO_CHANGE2)
     start_time = datetime.now()
     total_iterations, stagnation = thing.run()
     execution_time = datetime.now() - start_time
