@@ -52,17 +52,11 @@ if __name__=='__main__':
     MAX_GENERATIONS = None
     MAX_NO_CHANGE = None
     TOURNAMENT_SIZE = None
-<<<<<<< HEAD
-    MUTATION_RATE = None
-    CROSSOVER_RATE = None
-
-=======
     RL_RATE = None
     CROSSOVER_RATE = None
     MAX_COMBINATION_LENGTH = None
     MAX_ITERATIONS = None
     MAX_NO_CHANGE2 = None
->>>>>>> f6b1e96b618cf045f2892dee4d9413c5b8664fbd
     # Parse parameters
 
     with open(instance, 'r') as file:
