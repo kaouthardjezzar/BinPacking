@@ -13,13 +13,6 @@ def log(message, end=None):
 if __name__ == '__main__':
     datasets = [
          {"name": "N1C1W4_E.txt", "results": {}},
-        {"name": "N1C2W2_H.txt", "results": {}},
-        {"name": "N1C3W1_C.txt", "results": {}},
-       
-       
-        {"name": "N4W4B3R9.txt", "results": {}},
-        
-        {"name": "HARD9.txt", "results": {}},
       
     ]
 
@@ -33,7 +26,7 @@ if __name__ == '__main__':
         items = [Item(size=int(i)) for i in items]
         log("  Iteration", end=" ")
         # Perform 30 independent iterations.
-        for iteration in range(2):
+        for iteration in range(1):
             log(iteration+1, end=" ")
             # Randomize the order of the items in the item list.
             shuffle(items)
@@ -54,5 +47,5 @@ if __name__ == '__main__':
             }
             dataset["results"].setdefault("LTH2", []).append(summary)
     # Write the captured data to disk.
-    with open("./resultatsresults_LTH2.json", "w") as file:
+    with open("./results_LTH2.json", "w") as file:
         file.write(json.dumps(datasets, indent=2))

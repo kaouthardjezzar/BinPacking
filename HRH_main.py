@@ -11,7 +11,11 @@ def log(message, end=None):
 
 if __name__ == '__main__':
     datasets = [
+<<<<<<< HEAD
        {"name": "HARD9.txt", "solution":56, "results": {}},
+=======
+        {"name": "HARD9.txt", "solution":56, "results": {}},
+>>>>>>> f6b1e96b618cf045f2892dee4d9413c5b8664fbd
         {"name": "HARD0.txt", "solution":56, "results": {}},
         {"name": "HARD6.txt", "solution":57, "results": {}},
         {"name": "HARD7.txt", "solution":55, "results": {}},
@@ -28,6 +32,7 @@ if __name__ == '__main__':
         {"name": "N2W1B3R8.txt", "solution":34, "results": {}}, 
         {"name": "N3W3B3R1.txt", "solution":27, "results": {}}, 
         {"name": "N4W4B3R9.txt", "solution":56, "results": {}}, 
+        
        
     ]
 

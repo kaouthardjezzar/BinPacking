@@ -3,6 +3,7 @@ from item import Item
 from random import shuffle
 from datetime import datetime
 import json
+import time
 
 
 def log(message, end=None):
@@ -28,7 +29,7 @@ if __name__ == '__main__':
         {"name": "N2W1B3R8.txt", "solution":34, "results": {}}, 
         {"name": "N3W3B3R1.txt", "solution":27, "results": {}}, 
         {"name": "N4W4B3R9.txt", "solution":56, "results": {}}, 
-
+        
     ]
 
     # Loop through each data set.
@@ -50,10 +51,12 @@ if __name__ == '__main__':
             start_time = datetime.now()
             total_iterations, stagnation = thing.run()
             execution_time = datetime.now() - start_time
+            execution_time_insec = execution_time.total_seconds()
 
             # Record the relevant data for analysis
             summary = {
                 "execution_time": str(execution_time),
+                "execution_time_in_seconds" : str(execution_time_insec),
                 "num_bins": thing.best_solution.num_bins,
                 "fitness": thing.best_solution.fitness,
                 "iterations": total_iterations,
