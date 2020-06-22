@@ -47,7 +47,6 @@ if __name__ == '__main__':
             # Randomize the order of the items in the item list.
             shuffle(items)
             thing = GeneticAlgorithm(capacity, items)
-
             start_time = datetime.now()
             total_iterations, stagnation = thing.run()
             execution_time = datetime.now() - start_time
