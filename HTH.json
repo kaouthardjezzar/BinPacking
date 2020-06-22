@@ -1,23 +1,98 @@
 [
   {
     "name": "N1C1W4_E.txt",
+    "solution": 38,
     "results": {
       "HTH": [
         {
-          "execution_time": "0:00:28.613364",
-          "num_bins": [
-            39,
-            38,
-            38
-          ]
+          "execution_time": "0:00:17.947178",
+          "num_bins": 40,
+          "combination": "bbnnnbn"
         },
         {
-          "execution_time": "0:00:21.447330",
-          "num_bins": [
-            39,
-            39,
-            39
-          ]
+          "execution_time": "0:00:22.203784",
+          "num_bins": 41,
+          "combination": "fnbnbwfwbnbbn"
+        },
+        {
+          "execution_time": "0:00:22.786385",
+          "num_bins": 40,
+          "combination": "bbbnbf"
+        },
+        {
+          "execution_time": "0:00:25.024903",
+          "num_bins": 42,
+          "combination": "bwbwbbffbwnffwbffbnbfffnwn"
+        },
+        {
+          "execution_time": "0:00:29.407394",
+          "num_bins": 39,
+          "combination": "bbfnbwbwnfwfbfbbbbfbbfbfbn"
+        },
+        {
+          "execution_time": "0:00:29.756889",
+          "num_bins": 40,
+          "combination": "nbbnnbbnnbfnnbnbbnbnbbnbwbbbbwbbbnnbfnbnbbnbwbbbb"
+        },
+        {
+          "execution_time": "0:00:26.501087",
+          "num_bins": 40,
+          "combination": "nbb"
+        },
+        {
+          "execution_time": "0:00:34.095004",
+          "num_bins": 40,
+          "combination": "bbb"
+        },
+        {
+          "execution_time": "0:00:33.505349",
+          "num_bins": 39,
+          "combination": "bbbbbbbbbbn"
+        },
+        {
+          "execution_time": "0:00:36.920169",
+          "num_bins": 40,
+          "combination": "bbbnnnnbbbbbbbbbbbbf"
+        },
+        {
+          "execution_time": "0:00:33.444730",
+          "num_bins": 39,
+          "combination": "bbbnnbnbbb"
+        },
+        {
+          "execution_time": "0:00:35.714311",
+          "num_bins": 40,
+          "combination": "bbbbbfbbfbbnnwbbbnnwbbfbfbn"
+        },
+        {
+          "execution_time": "0:00:31.832494",
+          "num_bins": 39,
+          "combination": "bb"
+        },
+        {
+          "execution_time": "0:00:25.070390",
+          "num_bins": 38,
+          "combination": "bbbn"
+        },
+        {
+          "execution_time": "0:00:37.477332",
+          "num_bins": 40,
+          "combination": "nbb"
+        },
+        {
+          "execution_time": "0:00:33.557633",
+          "num_bins": 38,
+          "combination": "bbnbbbnbbnbbnbbnbbb"
+        },
+        {
+          "execution_time": "0:00:28.162637",
+          "num_bins": 39,
+          "combination": "bbnwbnnnwbbnb"
+        },
+        {
+          "execution_time": "0:00:26.901519",
+          "num_bins": 39,
+          "combination": "bbbbfbbfbbnfnwwnbbbfbbfbbnnbfbn"
         }
       ]
     }
