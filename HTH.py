@@ -22,7 +22,7 @@ class myThread (threading.Thread):
       self.lock=Lock
       self.queue = Queue
       self.name = name
-   def run(self,iterations=3):
+   def run(self,iterations=1):
       global jobs_done
       # while running add here some Locks to synchronize threads
       for i in range(iterations):

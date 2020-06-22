@@ -1,6 +1,7 @@
 from tabu_search import TabuSearch
 from SimulatedAnnealing import SA
 from genetic_algorithm import GeneticAlgorithm
+from heuristics import BestFit, FirstFit, NextFit, WorstFit , FirstFitDec
 from HRH import HRH
 from HRH_AG_RS import HRH_RS
 from LTH import LTH
@@ -11,6 +12,7 @@ from random import shuffle
 from datetime import datetime
 import json
 import matplotlib.pyplot as plt
+from bin import Bin
 
 def execute_algo(name,capacity,items):
     if(name == 'SA'):
@@ -62,14 +64,60 @@ def execute_algo(name,capacity,items):
         execution_time = datetime.now() - start_time
         time_algo = execution_time.total_seconds()
         bins_algo = thing.best_solution.num_bins
-    elif(name == 'HTH'):
-        thing = HTH(capacity, items)
+    # elif(name == 'HTH'):
+    #     thing = HTH(capacity, items)
+    #     start_time = datetime.now()
+    #     sa = thing.run()
+    #     execution_time = datetime.now() - start_time
+    #     time_algo = execution_time.total_seconds()
+    #     bins_algo = [len(a) for a in sa]
+
+    elif(name == 'FirstFit'):
         start_time = datetime.now()
-        sa = thing.run()
+        bins = [Bin(capacity=capacity)]
+        for item in items:
+            bins = FirstFit.apply(item, bins)
         execution_time = datetime.now() - start_time
         time_algo = execution_time.total_seconds()
-        bins_algo = [len(a) for a in sa]
-    
+        bins_algo = len(bins)
+
+    elif(name == 'NextFit'):
+        start_time = datetime.now()
+        bins = [Bin(capacity=capacity)]
+        for item in items:
+            bins = NextFit.apply(item, bins)
+        execution_time = datetime.now() - start_time
+        time_algo = execution_time.total_seconds()
+        bins_algo = len(bins)
+
+    elif(name == 'BestFit'):
+        start_time = datetime.now()
+        bins = [Bin(capacity=capacity)]
+        for item in items:
+            bins = BestFit.apply(item, bins)
+        execution_time = datetime.now() - start_time
+        time_algo = execution_time.total_seconds()
+        bins_algo = len(bins)
+
+    elif(name == 'WorstFit'):
+        start_time = datetime.now()
+        bins = [Bin(capacity=capacity)]
+        for item in items:
+            bins = WorstFit.apply(item, bins)
+        execution_time = datetime.now() - start_time
+        time_algo = execution_time.total_seconds()
+        bins_algo = len(bins)
+
+    elif(name == 'FirstFitDec'):
+        start_time = datetime.now()
+        bins = [Bin(capacity=capacity)]
+        item_sort = sorted (items, key=lambda x: x.size, reverse=True)
+        for item in item_sort:
+            bins = FirstFitDec.apply(item, bins)
+        execution_time = datetime.now() - start_time
+        time_algo = execution_time.total_seconds()
+        bins_algo = len(bins)
+        
 
     return bins_algo,time_algo
 
@@ -136,5 +184,4 @@ if __name__ == '__main__':
         # {"name": "N3W3B3R1.txt", "solution":27, "results": {}}, 
         # {"name": "N4W4B3R9.txt", "solution":56, "results": {}},   
     ]
-
-    compare('SA','RT',datasets)
+    compare('RT','FirstFitDec',datasets)

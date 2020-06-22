@@ -12,6 +12,8 @@ def log(message, end=None):
 
 if __name__ == '__main__':
     datasets = [
+    
+     
         {"name": "HARD9.txt", "solution":56, "results": {}},
         {"name": "HARD0.txt", "solution":56, "results": {}},
         {"name": "HARD6.txt", "solution":57, "results": {}},
@@ -28,7 +30,7 @@ if __name__ == '__main__':
         {"name": "N1W4B2R3.txt", "solution":6, "results": {}},
         {"name": "N2W1B3R8.txt", "solution":34, "results": {}}, 
         {"name": "N3W3B3R1.txt", "solution":27, "results": {}}, 
-        {"name": "N4W4B3R9.txt", "solution":56, "results": {}}, 
+        {"name": "N4W4B3R9.txt", "solution":56, "results": {}},        
 
     ]
 
@@ -42,7 +44,7 @@ if __name__ == '__main__':
         items = [Item(size=int(i)) for i in items]
         log("  Iteration", end=" ")
         # Perform 30 independent iterations.
-        for iteration in range(2):
+        for iteration in range(1):
             log(iteration+1, end=" ")
             # Randomize the order of the items in the item list.
             shuffle(items)
