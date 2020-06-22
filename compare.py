@@ -72,29 +72,9 @@ def execute_algo(name,capacity,items):
     
 
     return bins_algo,time_algo
-if __name__ == '__main__':
-    # Algo to compare : array of two names
-    names = ['SA', 'HTH']
 
-    datasets = [
-        # {"name": "HARD9.txt", "solution":56, "results": {}},
-        # {"name": "HARD0.txt", "solution":56, "results": {}},
-        # {"name": "HARD6.txt", "solution":57, "results": {}},
-        # {"name": "HARD7.txt", "solution":55, "results": {}},
-
-        {"name": "N1C1W4_E.txt", "solution":35, "results": {}},
-        {"name": "N1C2W2_H.txt", "solution":23, "results": {}},
-        #{"name": "N1C3W1_C.txt", "solution":17, "results": {}},
-        #{"name": "N2C1W1_G.txt", "solution":60, "results": {}},
-        #{"name": "N2C2W1_F.txt", "solution":49, "results": {}},
-        #{"name": "N2C3W1_Q.txt", "solution":34, "results": {}},
-        #{"name": "N3C1W1_K.txt", "solution":102, "results": {}},
-
-        # {"name": "N1W4B2R3.txt", "solution":6, "results": {}},
-        # {"name": "N2W1B3R8.txt", "solution":34, "results": {}}, 
-        # {"name": "N3W3B3R1.txt", "solution":27, "results": {}}, 
-        # {"name": "N4W4B3R9.txt", "solution":56, "results": {}},   
-    ]
+def compare(algo1,algo2,datasets):
+    names = [algo1,algo2]
 
     X = []
     Y_bins_algo1 = []
@@ -132,6 +112,29 @@ if __name__ == '__main__':
     plt.ylabel("Temps d'exécution")
     plt.xlabel("Instance")
     plt.legend(names)
-    # plt.show()
     plt.savefig('graphs/execution_time_'+names[0]+'_VS_'+names[1]+'.png')
-    # input()
+    
+
+if __name__ == '__main__':
+    # Algo to compare : array of two names
+    datasets = [
+        # {"name": "HARD9.txt", "solution":56, "results": {}},
+        # {"name": "HARD0.txt", "solution":56, "results": {}},
+        # {"name": "HARD6.txt", "solution":57, "results": {}},
+        # {"name": "HARD7.txt", "solution":55, "results": {}},
+
+        {"name": "N1C1W4_E.txt", "solution":35, "results": {}},
+        {"name": "N1C2W2_H.txt", "solution":23, "results": {}},
+        # {"name": "N1C3W1_C.txt", "solution":17, "results": {}},
+        # {"name": "N2C1W1_G.txt", "solution":60, "results": {}},
+        # {"name": "N2C2W1_F.txt", "solution":49, "results": {}},
+        # {"name": "N2C3W1_Q.txt", "solution":34, "results": {}},
+        # {"name": "N3C1W1_K.txt", "solution":102, "results": {}},
+
+        # {"name": "N1W4B2R3.txt", "solution":6, "results": {}},
+        # {"name": "N2W1B3R8.txt", "solution":34, "results": {}}, 
+        # {"name": "N3W3B3R1.txt", "solution":27, "results": {}}, 
+        # {"name": "N4W4B3R9.txt", "solution":56, "results": {}},   
+    ]
+
+    compare('SA','RT',datasets)
