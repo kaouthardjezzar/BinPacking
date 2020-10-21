@@ -1,6 +1,7 @@
-# bin-packing-hyper-heuristics
-Contains the code related to solving the offline one-dimensional bin-packing problem with hyper heuristics.
+# Plateforme-Resolution-Problème-Bin-Packing
 
-This was done in accordance with the specifications for the first assignment of the COS790 (Hyper Heuristics) course of the University of Pretoria.
+Une plateforme réalisée pour résoudre un problème parmis les problèmes NP complet qui est le Bin Packing. 
 
-The data sets used were retrieved from the Scholl benchmark set, found at https://www2.wiwi.uni-jena.de/Entscheidung/binpp/index.htm.
+Des méthodes exactes ont été implémentées (Branch & Bound et le programmation dynamique), ainsi que des heuristique et des méta/hyper heuristique. 
+
+Mélanger des heuristiques et des méta/hyper heuristiques donne naissance à des méthodes hybrides qui ont été implémentées en appliquant plusieurs approches. 
